@@ -2,6 +2,18 @@
 
 To make this repo also support Alpine OS, some recipes and layers need to be added. 
 
+## Done 
+
+- Created two layers for Alpine 
+- Added Alpine in rugix-bakery.toml
+
+## TODO
+
+- Systems.just -- add system for alpine 
+- justfile -- add alpine 
+- Check/add recipes for Alpine. Start with 'defaults', followed by 'setup-network' and 'setup-pkcs11' 
+
+
 ----------------
 Original README
 --------------
