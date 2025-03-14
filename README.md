@@ -1,4 +1,11 @@
-# Rugix thin-edge.io repository
+# Rugix thin-edge.io repository -- plus Alpine 
+
+To make this repo also support Alpine OS, some recipes and layers need to be added. 
+
+----------------
+Original README
+--------------
+## Rugix thin-edge.io repository
 
 **Additional recipes and layers for [Rugix](https://oss.silitics.com/rugix/).**
 

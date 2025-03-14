@@ -2,6 +2,12 @@
 [repositories]
 rugix-extra = { git = "https://github.com/silitics/rugix-extra.git", branch = "main" }
 
+# Add Alpine 
+[systems.tedge-alpine-320-amd64]
+layer = "tedge-alpine-320"
+architecture = "amd64"
+target = "generic-grub-efi"
+
 [systems.tedge-debian-13-efi-arm64]
 layer = "tedge-debian-13-efi"
 architecture = "arm64"
