@@ -11,7 +11,52 @@ To make this repo also support Alpine OS, some recipes and layers need to be add
 
 - ~~Systems.just -- add system for alpine~~
 - justfile -- add alpine 
-- Check/add recipes for Alpine. Start with 'defaults', followed by 'setup-network' and 'setup-pkcs11' 
+- Check recipes for Alpine. Start with 'defaults', followed by 'setup-network' and 'setup-pkcs11' 
+
+### Defaults
+Below are dependencies of current default recipe. Need to modify them for Alpine or skip if it is not necessary: 
+
+    "core/persist-root-home", --> can be used for Alpine, needs verification 
+    "rugix-extra/zsh", 
+
+    "essentials", 
+    "persist-network-manager", --> can be used for Alpine
+    "set-wifi", --> skip, wifi not supported
+    "ssh", --> can be used for Alpine, can be simplify 
+
+    # containers
+    "docker", --> no need, skip 
+
+    # default cmdline options
+    "boot-options", --> can be used for Alpine 
+
+    # enable mdns (for statically compiled musl binaries)
+    "systemd-resolved", --> not supported by Alpine, skip 
+
+#### essentials
+Dependencies of essentials. They are mostly for thin-edge: 
+
+    "thin-edge.io",
+    "persist-data",
+    "persist-overlay",
+    "tedge-bootstrap",
+    "tedge-local-pki",
+    "tedge-firmware-update",
+    "mosquitto"
+
+- thin-edge.io: its 01-install.sh can be compared to thin-edge's default install.sh to make it usable for alpine. It includes apt-get to install collectd, which can be removed first. It files and 00-packages looks fine. 
+
+- persist-data: fine for Alpine
+
+- persist-overlay: need to check 
+
+- tedge-bootstrap: doesn't support alpine, would skip for the first version
+
+- tedge-local-pki: doesn't support alpine, would skip for the first version
+
+- tedge-firmware-update: doesn't support alpine, would skip for the first version 
+
+- mosquitto: need to be modifed for Alpine
 
 
 ----------------
