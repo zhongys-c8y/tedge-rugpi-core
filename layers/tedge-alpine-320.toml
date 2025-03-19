@@ -10,7 +10,7 @@ recipes = [
     "setup-network", 
     # Current one has apt-get and systemctl
 
-    # PKCS11 tools -- not sure if it can be used for alpine
+    # PKCS11 tools -- its dependency thin-edge.io(recipes) needs to be modifies for Alpine (apk)
     "setup-pkcs11",
 
 ]
