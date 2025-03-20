@@ -56,7 +56,7 @@ Dependencies of essentials. They are mostly for thin-edge:
 
 - tedge-firmware-update: doesn't support alpine, would skip for the first version 
 
-- mosquitto: need to be modifed for Alpine
+- mosquitto: need to be modifed for Alpine. If we can use the [install.sh](https://github.com/thin-edge/thin-edge.io/blob/main/install.sh) script of thin-edge repo, this recipe might also be not necessary 
 
 
 ----------------

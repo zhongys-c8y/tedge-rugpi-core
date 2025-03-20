@@ -4,8 +4,8 @@ dependencies = [
     "thin-edge.io",
     "persist-data",
     "persist-overlay",
-    # "tedge-bootstrap",
-    # "tedge-local-pki",
-    # "tedge-firmware-update",
+    "tedge-bootstrap",
+    "tedge-local-pki",
+    "tedge-firmware-update",
     "mosquitto",
 ]
