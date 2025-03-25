@@ -2,7 +2,6 @@
 description = "thin-edge.io default recipes"
 dependencies = [
     "core/persist-root-home",
-    "rugix-extra/zsh",
 
     "essentials",
     "persist-network-manager",

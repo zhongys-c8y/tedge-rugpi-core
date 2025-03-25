@@ -1,5 +1,9 @@
 # Auto generated: DO NOT EDIT
 
+# system: tedge-alpine-320-omrom-amd64
+tedge-alpine-320-omrom-amd64 type='image':
+    just SYSTEM=tedge-alpine-320-omrom-amd64 build-{{type}}
+
 # system: tedge-debian-13-efi-arm64
 tedge-debian-13-efi-arm64 type='image':
     just SYSTEM=tedge-debian-13-efi-arm64 build-{{type}}

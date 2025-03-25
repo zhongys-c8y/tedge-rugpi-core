@@ -4,13 +4,12 @@ parent = "core/alpine-3-20"
 # Need recipes for Alpine 
 recipes = [
     # default tedge packages -- for Alpine
-    "defaults",
-
+    "defaults-alpine"
     # Setup the network -- for Alpine
-    "setup-network", 
+    #"setup-network",
     # Current one has apt-get and systemctl
 
     # PKCS11 tools -- its dependency thin-edge.io(recipes) needs to be modifies for Alpine (apk)
-    "setup-pkcs11",
+    #"setup-pkcs11",
 
 ]

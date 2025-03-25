@@ -3,8 +3,8 @@
 rugix-extra = { git = "https://github.com/silitics/rugix-extra.git", branch = "main" }
 
 # Add Alpine 
-[systems.tedge-alpine-320-amd64]
-layer = "tedge-alpine-320"
+[systems.tedge-alpine-320-omrom-amd64]
+layer = "tedge-alpine-320-omrom"
 architecture = "amd64"
 target = "generic-grub-efi"
 
