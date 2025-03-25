@@ -1,0 +1,10 @@
+dmidecode
+pcitutils
+pciutils
+logrotate
+btop
+openssh
+openrc
+sudo
+sysklogd
+openntpd

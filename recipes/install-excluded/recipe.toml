@@ -1,0 +1,7 @@
+#:schema https://raw.githubusercontent.com/silitics/rugix/refs/tags/v0.8.0/schemas/rugix-bakery-recipe.schema.json
+description = "install excluded packages"
+priority = 1
+
+dependencies = [
+    "core/pkg-update",
+]
