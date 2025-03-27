@@ -1,14 +1,10 @@
 #!/bin/sh
-set -e
+set -eu
 
-USERNAME="adminuser"
-PASSWORD="adminuser"
+adduser -D -s /bin/sh dev
+echo "dev:dev" | chpasswd
+echo root:root | chpasswd
 
-# Create user
-adduser "$USERNAME" -G "$USERNAME"
+adduser "dev" wheel
 
-# echo "$USERNAME:$PASSWORD" | chpasswd
-
-# adduser "$USERNAME" wheel
-
-echo "User $USERNAME created successfully."
+echo "Created user"

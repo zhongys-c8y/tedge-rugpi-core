@@ -2,5 +2,6 @@
 parent = "tedge-alpine-320-efi"
 
 recipes = [
-    "remove-gpl3"
+    "remove-gpl3",
+    "add-user"
 ]
