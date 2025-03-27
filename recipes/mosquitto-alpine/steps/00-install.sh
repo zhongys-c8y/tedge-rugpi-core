@@ -37,8 +37,7 @@ cat <<EOT > /etc/init.d/mosquitto
 name="Mosquitto MQTT broker"
 command="/usr/sbin/mosquitto"
 command_args="-c /etc/mosquitto/mosquitto.conf"
-pidfile="/var/run/mosquitto/mosquitto.pid"
-command_background="yes"
+command_args_background="-d"
 description="Lightweight MQTT broker"
 
 depend() {
