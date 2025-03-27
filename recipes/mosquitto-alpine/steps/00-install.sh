@@ -31,9 +31,15 @@ apk add --no-cache mosquitto mosquitto-clients
 rc-update add mosquitto default
 
 # Ensure Mosquitto does not start before the network is ready
-mkdir -p /etc/init.d/mosquitto
+# mkdir -p /etc/init.d/mosquitto
 cat <<EOT > /etc/init.d/mosquitto
 #!/sbin/openrc-run
+name="Mosquitto MQTT broker"
+command="/usr/sbin/mosquitto"
+command_args="-c /etc/mosquitto/mosquitto.conf"
+pidfile="/var/run/mosquitto/mosquitto.pid"
+command_background="yes"
+description="Lightweight MQTT broker"
 
 depend() {
     need net
@@ -42,6 +48,8 @@ depend() {
 start_pre() {
     mkdir -p /var/lib/mosquitto
     chown -R mosquitto:mosquitto /var/lib/mosquitto
+    checkpath -d -m 0755 -o mosquitto:mosquitto /var/run/mosquitto
+
 }
 EOT
 chmod +x /etc/init.d/mosquitto
