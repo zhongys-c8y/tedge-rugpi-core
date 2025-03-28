@@ -83,6 +83,7 @@ if [ "$IS_ALPINE" -eq 1 ]; then
         tedge-command-plugin \
         tedge-inventory-plugin \
         tedge-container-plugin-ng \
+        tedge-apk-plugin \
         collectd \
         networkmanager
 else
