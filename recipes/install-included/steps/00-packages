@@ -1,5 +1,6 @@
+gptfdisk
+hwdata
 dmidecode
-pcitutils
 pciutils
 logrotate
 btop

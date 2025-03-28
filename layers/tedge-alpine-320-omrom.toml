@@ -2,6 +2,12 @@
 parent = "tedge-alpine-320-efi"
 
 recipes = [
+    # Remove apk packages that have GPL-v3 license 
     "remove-gpl3",
-    "add-user"
+
+    # Install included apk packages
+    "install-included",
+
+    # Optional: can add user and set password for root user
+    # "add-user"
 ]

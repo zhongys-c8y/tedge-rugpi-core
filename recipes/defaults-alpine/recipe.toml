@@ -5,15 +5,9 @@ dependencies = [
 
     "essentials-alpine",
     "persist-network-manager",
-    # "set-wifi",
     "ssh",
-
-    # containers
-    # "docker",
 
     # default cmdline options
     "boot-options",
 
-    # enable mdns (for statically compiled musl binaries)
-    # "systemd-resolved",
 ]

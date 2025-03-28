@@ -5,9 +5,13 @@ apk update
 
 # Install required packages
 apk add --no-cache \
+    cgroup-tools \
     podman \
     podman-compose \
-    tedge-container-plugin-ng
+    fuse-overlayfs\
+    tedge-container-plugin-ng \
+
+rc-update add podman
 
 # Copy podman persist file
 install -D -m 644 "${RECIPE_DIR}/files/podman.toml" -t /etc/rugix/state
