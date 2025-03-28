@@ -6,29 +6,32 @@ To make this repo also support Alpine OS, some recipes and layers need to be add
 
 - Created three layers for Alpine:
     
+    ```
     layers/tedge-alpine-320.toml
 
     layers/tedge-alpine-320-omrom.toml
 
     layers/tedge-alpine-320-efi.toml
+    ```
 
-- Added Alpine in rugix-bakery.toml
+- Added Alpine in `rugix-bakery.toml`
 - Added multiple recipes:
 
+    ```
     add-user
     defaults-alpine
     essentials-alpine
     install-included
     mosquitto-alpine
     remove-gpl3
-
-- Adjust recipe/thin-edge.io/steps/01-instal.sh for Alpine OS
+    ```
+- Adjust `recipe/thin-edge.io/steps/01-instal.sh` for Alpine OS
 
 ## How to build image
 
 1. install [just](https://github.com/casey/just) 
-2. just SYSTEM=tedge-alpine-320-omrom-amd64 build-image 
-3. system.img will be created under build/tedge-alpine-320-omrom-amd64/system.img
+2. start the building process `just SYSTEM=tedge-alpine-320-omrom-amd64 build-image`
+3. system.img will be created under `build/tedge-alpine-320-omrom-amd64/system.img`
 
 +++ You can also use the image to start a virtual machine. See the justfile for more features. +++ 
 
