@@ -1,4 +1,0 @@
-#:schema https://raw.githubusercontent.com/silitics/rugix/refs/tags/v0.8.0/schemas/rugix-bakery-recipe.schema.json
-description = "Setup zsh"
-dependencies = ["core/pkg-update"]
-priority = 90_000 # Earlier than core/ssh

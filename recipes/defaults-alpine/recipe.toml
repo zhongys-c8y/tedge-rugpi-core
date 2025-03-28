@@ -6,7 +6,6 @@ dependencies = [
     "essentials-alpine",
     "persist-network-manager",
     # "set-wifi",
-    "zsh",
     "ssh",
 
     # containers
