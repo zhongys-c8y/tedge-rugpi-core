@@ -1,63 +1,43 @@
 # Rugix thin-edge.io repository -- plus Alpine 
 
-To make this repo also support Alpine OS, some recipes and layers need to be added. 
+To make this repo also support Alpine OS, some recipes and layers need to be added. All the changes are in the branch v0.8=rugix. 
 
-## Done 
+## What we did for Omron PC 
 
-- Created two layers for Alpine 
+- Created three layers for Alpine:
+    
+    layers/tedge-alpine-320.toml
+
+    layers/tedge-alpine-320-omrom.toml
+
+    layers/tedge-alpine-320-efi.toml
+
 - Added Alpine in rugix-bakery.toml
+- Added multiple recipes:
 
-## TODO
+    add-user
+    defaults-alpine
+    essentials-alpine
+    install-included
+    mosquitto-alpine
+    remove-gpl3
 
-- ~~Systems.just -- add system for alpine~~
-- justfile -- add alpine 
-- Check recipes for Alpine. Start with 'defaults', followed by 'setup-network' and 'setup-pkcs11' 
+- Adjust recipe/thin-edge.io/steps/01-instal.sh for Alpine OS
 
-### Defaults
-Below are dependencies of current default recipe. Need to modify them for Alpine or skip if it is not necessary: 
+## How to build image
 
-    "core/persist-root-home", --> can be used for Alpine, needs verification 
-    "rugix-extra/zsh", 
+1. install [just](https://github.com/casey/just) 
+2. just SYSTEM=tedge-alpine-320-omrom-amd64 build-image 
+3. system.img will be created under build/tedge-alpine-320-omrom-amd64/system.img
 
-    "essentials", 
-    "persist-network-manager", --> can be used for Alpine
-    "set-wifi", --> skip, wifi not supported
-    "ssh", --> can be used for Alpine, can be simplify 
++++ You can also use the image to start a virtual machine. See the justfile for more features. +++ 
 
-    # containers
-    "docker", --> no need, skip 
+## How to customize the building process
 
-    # default cmdline options
-    "boot-options", --> can be used for Alpine 
-
-    # enable mdns (for statically compiled musl binaries)
-    "systemd-resolved", --> not supported by Alpine, skip 
-
-#### essentials
-Dependencies of essentials. They are mostly for thin-edge: 
-
-    "thin-edge.io",
-    "persist-data",
-    "persist-overlay",
-    "tedge-bootstrap",
-    "tedge-local-pki",
-    "tedge-firmware-update",
-    "mosquitto"
-
-- thin-edge.io: its 01-install.sh can be compared to thin-edge's default install.sh to make it usable for alpine. It includes apt-get to install collectd, which can be removed first. It files and 00-packages looks fine. 
-
-- persist-data: fine for Alpine
-
-- persist-overlay: need to check 
-
-- tedge-bootstrap: doesn't support alpine, would skip for the first version
-
-- tedge-local-pki: doesn't support alpine, would skip for the first version
-
-- tedge-firmware-update: doesn't support alpine, would skip for the first version 
-
-- mosquitto: need to be modifed for Alpine. If we can use the [install.sh](https://github.com/thin-edge/thin-edge.io/blob/main/install.sh) script of thin-edge repo, this recipe might also be not necessary 
-
+- [Systems](https://oss.silitics.com/rugix/docs/bakery/systems): define name, layer, architecture and target for a new system. 
+- [Layers](https://oss.silitics.com/rugix/docs/bakery/layers): define parent and required recipes.
+- [Recipes](https://oss.silitics.com/rugix/docs/bakery/recipes): define the steps to build the image. Include excutable files and configuration files. 
+- [Tests](https://oss.silitics.com/rugix/docs/bakery/advanced/system-testing): system testing framework supports you test the image on you PC. 
 
 ----------------
 Original README
