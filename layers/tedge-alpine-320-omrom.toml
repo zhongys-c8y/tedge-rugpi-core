@@ -10,4 +10,7 @@ recipes = [
 
     # Optional: can add user and set password for root user
     # "add-user"
+
+    # Install Podman
+    "podman-alpine"
 ]
